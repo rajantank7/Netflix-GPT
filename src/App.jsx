@@ -1,19 +1,5 @@
-import { createBrowserRouter } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header";
 import Login from "./components/Login";
-import Browse from "./components/Browse";
-
-const appRouter = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/browse",
-    element: <Browse />,
-  },
-]);
 
 function App() {
   return (
@@ -22,5 +8,4 @@ function App() {
     </div>
   );
 }
-
-export default appRouter;
+export default App;
