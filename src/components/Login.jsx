@@ -10,13 +10,12 @@ import { auth } from "../utils/firebase";
 
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_URL } from "../utils/constants";
 
 const Login = () => {
   const [isSignIn, setisSignIn] = useState(true);
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
-
-
 
   const email = useRef(null);
   const password = useRef(null);
@@ -61,7 +60,6 @@ const Login = () => {
                 })
               );
               console.log(" updated");
-             
             })
             .catch((error) => {
               // An error occurred
@@ -85,14 +83,14 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          
+
           console.log(user);
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-     
+
           console.log(errorCode, errorMessage);
           setError(errorMessage);
         });
@@ -174,10 +172,7 @@ const Login = () => {
         </p>
       </form>
 
-      <img
-        className="h-screen w-screen"
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/9390f6f6-cf80-4bc9-8981-8c2cc8adf98a/web/IN-en-20250421-TRIFECTA-perspective_dc5bcfdf-88a5-4972-8ffe-b28ff942f76e_large.jpg"
-      />
+      <img className="h-screen w-screen" src={BG_URL} />
     </div>
   );
 };

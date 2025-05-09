@@ -5,9 +5,13 @@ export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ODVmN2JjODczMjY0ZWI5YTNjYjc0MjdhMzJmZDFhOSIsIm5iZiI6MS43NDYyODkwMjg4ODMwMDAxZSs5LCJzdWIiOiI2ODE2NDE4NGU5N2Y5MTIyYjk5NTk2MWUiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.rmIBvMiJ8hXlmzumvbkMTGBHHpnbD8JHoh8RSyF4L0M",
+    Authorization: `Bearer ${import.meta.env.VITE_TMDB_KEY}`,
   },
 };
 
 export const Img_URL = "https://image.tmdb.org/t/p/w500/";
+
+export const BG_URL =
+  "https://assets.nflxext.com/ffe/siteui/vlv3/9390f6f6-cf80-4bc9-8981-8c2cc8adf98a/web/IN-en-20250421-TRIFECTA-perspective_dc5bcfdf-88a5-4972-8ffe-b28ff942f76e_large.jpg";
+
+export const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;

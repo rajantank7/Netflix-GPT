@@ -1,0 +1,42 @@
+  <>
+      {location.pathname === "/browse" && (
+        <div className=" absolute z-20 w-full px-8 py-2 bg-gradient-to-b from-black flex justify-between">
+          <img className="w-44" src={LOGO} alt="Logo" />
+          {on == true && (
+            <div className="flex items-center space-x-2 text-white ">
+              <button
+                className="py-2 px-4 mx-4 bg-gray-500 rounded-md cursor-pointer"
+                onClick={handelGptSearchClick}
+              >
+                GPT-Search
+              </button>
+              <img
+                className="w-10 h-10 cursor-pointer"
+                src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
+                alt=""
+              />
+              {/* <h1 className="text-lg font-bold">{user.displayName}</h1> */}
+              <button onClick={handelSignOut} className="cursor-pointer">
+                (Sign out)
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+      <div className=" absolute z-20 w-full px-8 py-2 bg-gradient-to-b from-black flex justify-between ">
+        <img className="w-44" src={LOGO} alt="Logo" />
+        {on == true && (
+          <div className="flex items-center space-x-2 text-white ">
+            <img
+              className="w-10 h-10 cursor-pointer"
+              src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.webp"
+              alt=""
+            />
+            {/* <h1 className="text-lg font-bold">{user.displayName}</h1> */}
+            <button onClick={handelSignOut} className="cursor-pointer">
+              (Sign out)
+            </button>
+          </div>
+        )}
+      </div>
+    </>
