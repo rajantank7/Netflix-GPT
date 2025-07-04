@@ -12,5 +12,5 @@ const cofigLang = createSlice({
   },
 });
 
-export const { setLang } = configLang.actions;
-export default configLang.reducer;
+export const { setLang } = cofigLang.actions;
+export default cofigLang.reducer;
