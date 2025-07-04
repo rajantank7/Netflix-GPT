@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import useMovieTrailer from "../hooks/useMovieTrailer";
 import { setCardId, setShowVideo } from "../utils/gptSlice";
+import { addTrailerVideo } from "../utils/moviesSlice";
 
 const Video = ({ movieId }) => {
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
@@ -13,7 +14,34 @@ const Video = ({ movieId }) => {
     dispatch(setCardId(null));
   };
 
-  if (!trailerVideo) return null;
+  if (!trailerVideo) {
+    dispatch(addTrailerVideo(null)); // This ensures trailerVideo !== undefined
+  }
+
+  if (trailerVideo === undefined) {
+    return (
+      <div className="flex justify-center items-center h-screen text-white">
+        <p>Loading trailer...</p>
+      </div>
+    );
+  }
+
+  if (trailerVideo === null) {
+    return (
+      <div className="flex flex-col justify-center items-center h-screen bg-black text-white text-lg">
+        <p className="text-xl font-semibold">
+          Video not available for this movie.
+        </p>
+        <button
+          className="mt-6 px-6 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition duration-200"
+          onClick={handleClick}
+        >
+          🔙 Go Back
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div
