@@ -14,7 +14,7 @@ import {
   setSearchTitle,
   setMovieResults,
 } from "../utils/gptSlice";
-import { setLang } from "../utils/ConfigLang";
+import { setLang } from "../utils/configLang";
 
 const Header = () => {
   const location = useLocation();
