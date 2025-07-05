@@ -19,14 +19,14 @@ const VideoTitle = ({ title, overview, movieId }) => {
       <p className="w-1/4 py-1 text-sm hidden md:block  ">{overview}</p>
       <div className="pt-1 md:pt-3">
         <button
-          className="p-1 px-2 md:p-2 md:px-8 text-[10px] md:text-base bg-white text-black rounded-md  hover:hover:bg-white/80"
+          className="p-1 px-2 md:p-2 md:px-8 text-[10px] md:text-base cursor-pointer bg-white text-black rounded-md  hover:hover:bg-white/80"
           onClick={handlePlayClick}
         >
           ▶️Play
         </button>
         <button
           onClick={handleClick}
-          className="p-1 px-2 md:p-2 md:px-8 mx-2 text-[10px] md:text-base  bg-gray-500  hover:hover:bg-gray-500/80 text-white rounded-md "
+          className="p-1 px-2 md:p-2 md:px-8 mx-2 text-[10px] md:text-base  cursor-pointer bg-gray-500  hover:hover:bg-gray-500/80 text-white rounded-md "
         >
           <img
             className="w-2.5 h-2.5 md:w-5 md:h-5 relative bottom-0.5 inline"

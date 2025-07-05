@@ -12,7 +12,7 @@ const MovieCard = ({ posterPath, movieId, name, movie }) => {
   if (!posterPath) return null;
   return (
     // <div className="transform transition duration-300 hover:scale-125 hover:shadow-xl">
-    <div className="overflow-visible p-2">
+    <div className="overflow-visible p-2 cursor-pointer">
       <div className="transform relative  group transition-all duration-300 hover:scale-120 hover:shadow-2xl">
         <img
           className="w-38 inline-block cursor-poniter rounded-[6px]"
