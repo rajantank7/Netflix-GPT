@@ -41,7 +41,26 @@ const Video = ({ movieId }) => {
       </div>
     );
   }
+  return (
+    <div>
+      <div
+        className="absolute text-white cursor-pointer left-0 right-0 top-2 w-fit mx-30 md:mx-auto"
+        onClick={handleClick}
+      >
+        ❌(close video)
+      </div>
 
+      <iframe
+        className="w-screen h-screen aspect-video"
+        src={`https://www.youtube.com/embed/${trailerVideo.key}?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0&fs=1&loop=1&playlist=${trailerVideo.key}`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
   return (
     <div>
       <div
