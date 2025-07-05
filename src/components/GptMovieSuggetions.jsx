@@ -15,7 +15,7 @@ const GptMovieSuggetions = () => {
   }
 
   return (
-    <div className="z-10 relative bg-black m-3 pt-2">
+    <div className="z-10 relative bg-black m-3 pt-2 ">
       <MovieListSearch title={""} movies={movieResults} name={movieNames} />
     </div>
   );

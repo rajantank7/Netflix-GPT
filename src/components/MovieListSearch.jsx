@@ -6,9 +6,9 @@ const MovieListSearch = ({ title, movies, name }) => {
     <div>
       <div className="px-6">
         <h1 className="text-2xl py-2 text-white">{title}</h1>
-        <div className="flex gap-3 flex-wrap overflow-x-scroll scrollbar-hidden">
+        <div className="flex gap-2 md:gap-3 flex-wrap  overflow-x-scroll scrollbar-hidden">
           {movies?.map((movie) => (
-            <div className="min-w-[155px] ">
+            <div className="min-w-[155px]  ">
               <MovieCard
                 posterPath={movie?.poster_path}
                 movieId={movie?.id}

@@ -103,26 +103,109 @@ const Login = () => {
     email.current.value = "";
     password.current.value = "";
   };
+  // return (
+  //   <div>
+  //     <Header />
+
+  //     <form
+  //       onSubmit={(e) => e.preventDefault()}
+  //       className="absolute w-85 md:w-100  my-30 mx-auto left-0 right-0 bg-black text-white p-8 md:p-12 z-1 opacity-86 "
+  //     >
+  //       <h1 className="text-3xl font-bold mb-4">
+  //         {isSignIn ? "Sign In" : "Sign Up"}
+  //       </h1>
+  //       {!isSignIn && (
+  //         <input
+  //           ref={name}
+  //           type="text"
+  //           placeholder="Full Name"
+  //           className="p-3 my-3 w-full border border-white/50 "
+  //         />
+  //       )}
+  //       {error == "Name is not valid" && !isSignIn && (
+  //         <p className="text-red-600 font-bold">{error}</p>
+  //       )}
+
+  //       <input
+  //         ref={email}
+  //         type="text"
+  //         placeholder="Email"
+  //         className="p-3 my-3 w-full border border-white/50 "
+  //       />
+  //       {error == "Email Id not valid" && (
+  //         <p className="text-red-600  font-bold">{error}</p>
+  //       )}
+  //       <input
+  //         ref={password}
+  //         type="password"
+  //         placeholder="Password"
+  //         className="p-3 my-3 w-full border border-white/50"
+  //       />
+  //       {error == "Password is not valid" && (
+  //         <p className="text-red-600  font-bold">{error}</p>
+  //       )}
+  //       {error &&
+  //         error !== "Email Id not valid" &&
+  //         error !== "Password is not valid" &&
+  //         error !== "Name is not valid" && (
+  //           <p className="text-red-600 font-bold">{error}</p>
+  //         )}
+
+  //       <button
+  //         className=" bg-red-700 p-2 w-full my-3 cursor-pointer"
+  //         onClick={handleBtnClick}
+  //       >
+  //         {isSignIn ? "Sign In" : "Sign Up"}
+  //       </button>
+  //       <p className="my-5 cursor-pointer" onClick={toggleSignInToSignUp}>
+  //         {isSignIn ? (
+  //           <>
+  //             <span className="text-gray-400">New to Netflix?</span>
+  //             <span className="text-white font-bold"> Sign Up now!</span>
+  //           </>
+  //         ) : (
+  //           <>
+  //             <span className="text-gray-400">Already have an account?</span>
+  //             <span className="text-white font-bold"> Sign In</span>
+  //           </>
+  //         )}
+  //       </p>
+  //     </form>
+
+  //     <img className="h-screen w-screen" src={BG_URL} />
+  //   </div>
+  // );
+
   return (
-    <div>
+    <div className="relative min-h-screen">
       <Header />
 
+      {/* Background image */}
+      <img
+        src={BG_URL}
+        alt="background"
+        className="absolute top-0 left-0 w-full h-full  -z-10"
+      />
+
+      {/* Login/Signup Form */}
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute w-100  my-30 mx-auto left-0 right-0 bg-black text-white p-12 z-1 opacity-86 "
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                 w-[90%] max-w-[25rem] bg-black bg-opacity-80 text-white p-6 sm:p-12 rounded-md opacity-86"
       >
-        <h1 className="text-3xl font-bold mb-4">
+        <h1 className="text-3xl font-bold mb-4 ">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
+
         {!isSignIn && (
           <input
             ref={name}
             type="text"
             placeholder="Full Name"
-            className="p-3 my-3 w-full border border-white/50 "
+            className="p-3 my-3 w-full border border-white/50 bg-transparent rounded"
           />
         )}
-        {error == "Name is not valid" && !isSignIn && (
+        {error === "Name is not valid" && !isSignIn && (
           <p className="text-red-600 font-bold">{error}</p>
         )}
 
@@ -130,51 +213,58 @@ const Login = () => {
           ref={email}
           type="text"
           placeholder="Email"
-          className="p-3 my-3 w-full border border-white/50 "
+          className="p-3 my-3 w-full border border-white/50 bg-transparent rounded"
         />
-        {error == "Email Id not valid" && (
-          <p className="text-red-600  font-bold">{error}</p>
+        {error === "Email Id not valid" && (
+          <p className="text-red-600 font-bold">{error}</p>
         )}
+
         <input
           ref={password}
           type="password"
           placeholder="Password"
-          className="p-3 my-3 w-full border border-white/50"
+          className="p-3 my-3 w-full border border-white/50 bg-transparent rounded"
         />
-        {error == "Password is not valid" && (
-          <p className="text-red-600  font-bold">{error}</p>
+        {error === "Password is not valid" && (
+          <p className="text-red-600 font-bold">{error}</p>
         )}
+
         {error &&
-          error !== "Email Id not valid" &&
-          error !== "Password is not valid" &&
-          error !== "Name is not valid" && (
+          ![
+            "Email Id not valid",
+            "Password is not valid",
+            "Name is not valid",
+          ].includes(error) && (
             <p className="text-red-600 font-bold">{error}</p>
           )}
 
         <button
-          className=" bg-red-700 p-2 w-full my-3 cursor-pointer"
+          className="bg-red-700 hover:bg-red-800 transition p-2 w-full my-3 rounded cursor-pointer"
           onClick={handleBtnClick}
         >
           {isSignIn ? "Sign In" : "Sign Up"}
         </button>
-        <p className="my-5 cursor-pointer" onClick={toggleSignInToSignUp}>
+
+        <p
+          className="my-5 cursor-pointer text-center"
+          onClick={toggleSignInToSignUp}
+        >
           {isSignIn ? (
             <>
-              <span className="text-gray-400">New to Netflix?</span>
-              <span className="text-white font-bold"> Sign Up now!</span>
+              <span className="text-gray-400">New to Netflix?</span>{" "}
+              <span className="text-white font-bold">Sign Up now!</span>
             </>
           ) : (
             <>
-              <span className="text-gray-400">Already have an account?</span>
-              <span className="text-white font-bold"> Sign In</span>
+              <span className="text-gray-400">Already have an account?</span>{" "}
+              <span className="text-white font-bold">Sign In</span>
             </>
           )}
         </p>
       </form>
-
-      <img className="h-screen w-screen" src={BG_URL} />
     </div>
   );
+  cd;
 };
 
 export default Login;

@@ -19,6 +19,7 @@ const MovieCard = ({ posterPath, movieId, name, movie }) => {
           src={Img_URL + posterPath}
           onClick={handleCardClick}
         />
+        <h1 className="text-white my-2 w-38">{name}</h1>
       </div>
     </div>
   );

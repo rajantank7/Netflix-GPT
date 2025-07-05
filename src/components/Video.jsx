@@ -45,7 +45,7 @@ const Video = ({ movieId }) => {
   return (
     <div>
       <div
-        className="absolute text-white cursor-pointer left-0 right-0 top-2 flex justify-center"
+        className="absolute text-white cursor-pointer left-0 right-0 top-2 w-fit mx-30 md:mx-auto"
         onClick={handleClick}
       >
         ❌(close video)
