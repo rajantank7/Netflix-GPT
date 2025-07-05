@@ -50,7 +50,6 @@ const Browse = () => {
     );
   }
 
-  const { id } = movies[2];
 
   return (
     <div>
